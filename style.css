@@ -1,0 +1,342 @@
+/* ======================================================
+   CARAS — Newsletter landing (Entrega 1)
+   Paleta oficial: Rojo #ED1E1E · Blanco #FFFFFF
+   Tipografía oficial: Playfair Display (títulos/texto) · Barlow (secciones/fechas)
+   ====================================================== */
+
+:root{
+  --rojo: #ED1E1E;
+  --blanco: #FFFFFF;
+  --negro: #141414;          /* neutro funcional: texto de lectura */
+  --gris-texto: #4A4A48;     /* neutro funcional: texto secundario */
+  --gris-linea: #E4E1D8;     /* neutro funcional: divisores */
+  --crema: #FAF9F6;          /* neutro funcional: fondo de página */
+
+  --fuente-editorial: 'Playfair Display', serif;
+  --fuente-ui: 'Barlow', sans-serif;
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+body{
+  font-family: var(--fuente-editorial);
+  color: var(--negro);
+  background: var(--crema);
+  line-height: 1.6;
+}
+
+img{ max-width: 100%; display: block; }
+
+a{ color: inherit; text-decoration: none; }
+
+h1, h2, h3{ font-family: var(--fuente-editorial); font-weight: 700; }
+
+/* ---------- Encabezado ---------- */
+.site-header{
+  text-align: center;
+  padding: 56px 24px 44px;
+  border-bottom: 1px solid var(--gris-linea);
+}
+
+.logo{
+  font-family: var(--fuente-editorial);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--rojo);
+  letter-spacing: .04em;
+  margin-bottom: 18px;
+}
+
+.header-titulo{
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.15;
+  max-width: 20ch;
+  margin: 0 auto 14px;
+}
+
+.header-subtitulo{
+  font-family: var(--fuente-ui);
+  font-weight: 400;
+  color: var(--gris-texto);
+  font-size: 17px;
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+/* ---------- Sección: formulario de suscripción (Grid) ---------- */
+.suscripcion{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 56px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.eyebrow{
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.suscripcion-texto h2{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.suscripcion-texto p{
+  font-family: var(--fuente-ui);
+  color: var(--gris-texto);
+  font-size: 15px;
+}
+
+.suscripcion-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  background: var(--blanco);
+  border: 1px solid var(--gris-linea);
+  padding: 28px;
+}
+
+.campo{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label{
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--negro);
+}
+
+.campo input{
+  font-family: var(--fuente-ui);
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1px solid var(--gris-linea);
+  background: var(--crema);
+  color: var(--negro);
+}
+
+.campo input:focus{
+  outline: none;
+  border-color: var(--rojo);
+}
+
+.btn-primario{
+  grid-column: 1 / -1;
+  background: var(--rojo);
+  color: var(--blanco);
+  border: none;
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 14px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.btn-primario:hover{
+  background: #B31414;
+}
+
+/* ---------- Sección: beneficios (Grid) ---------- */
+.beneficios{
+  padding: 56px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.beneficios h2{
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.beneficios-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: left;
+}
+
+.beneficio img{
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.beneficio h3{
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.beneficio p{
+  font-family: var(--fuente-ui);
+  font-size: 14px;
+  color: var(--gris-texto);
+}
+
+/* ---------- Sección: testimonios (Flexbox) ---------- */
+.testimonios{
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.testimonios h2{
+  color: var(--blanco);
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.testimonios-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.testimonio{
+  flex: 1 1 280px;
+  max-width: 320px;
+  background: #1E1E1C;
+  border: 1px solid #2B2B29;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.cita{
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.autor{
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 13px;
+  color: #B8B8B4;
+}
+
+/* ---------- Pie de página (Flexbox) ---------- */
+.site-footer{
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 40px 24px 24px;
+}
+
+.footer-contenido{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto 24px;
+}
+
+.logo-footer{
+  font-family: var(--fuente-editorial);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.footer-redes{
+  display: flex;
+  gap: 22px;
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.footer-contacto{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--fuente-ui);
+  font-size: 13px;
+  font-style: normal;
+  text-align: right;
+}
+
+.footer-legal{
+  text-align: center;
+  font-family: var(--fuente-ui);
+  font-size: 11px;
+  color: rgba(255,255,255,.8);
+  border-top: 1px solid rgba(255,255,255,.25);
+  padding-top: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ======================================================
+   Responsividad
+   ====================================================== */
+
+@media (max-width: 860px){
+  .suscripcion{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .beneficios-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px){
+  .site-header{ padding: 40px 20px 32px; }
+
+  .suscripcion,
+  .beneficios{ padding: 40px 20px; }
+
+  .suscripcion-form{
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .beneficios-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .footer-contenido{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-contacto{
+    text-align: center;
+    align-items: center;
+  }
+}
