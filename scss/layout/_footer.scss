@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+.site-footer{
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 40px 24px 24px;
+}
+
+.footer-contenido{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto 24px;
+
+  @include respond-to(mobile){
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.logo-footer{
+  font-family: var(--fuente-editorial);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.footer-redes{
+  display: flex;
+  gap: 22px;
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.footer-contacto{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--fuente-ui);
+  font-size: 13px;
+  font-style: normal;
+  text-align: right;
+
+  @include respond-to(mobile){
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.footer-legal{
+  text-align: center;
+  font-family: var(--fuente-ui);
+  font-size: 11px;
+  color: rgba(255,255,255,.8);
+  border-top: 1px solid rgba(255,255,255,.25);
+  padding-top: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+}

@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+.beneficios{
+  padding: 56px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+
+  @include respond-to(mobile){
+    padding: 40px 20px;
+  }
+
+  h2{
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+.beneficios-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: left;
+
+  @include respond-to(tablet){
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond-to(mobile){
+    grid-template-columns: 1fr;
+  }
+}
+
+.beneficio{
+  img{
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+
+  h3{
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  p{
+    font-family: var(--fuente-ui);
+    font-size: 14px;
+    color: var(--gris-texto);
+  }
+}
