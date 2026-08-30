@@ -4,18 +4,18 @@ Landing page de suscripción al newsletter de **CARAS**, con la agenda social, d
 
 ## Demostración
 
-Aún no cuenta con despliegue en línea. Mientras tanto, puedes verla abriendo `index.html` localmente (ver sección [Uso](#uso)).
+Aún no cuenta con despliegue en línea. Mientras tanto, puedes verla abriendo https://jonnschenk.github.io/CARAS/.
 
 ## Tecnologías utilizadas
 
 - HTML5 semántico
-- [Sass / SCSS](https://sass-lang.com/) (arquitectura por partials con `@use`/`@forward`)
+- [Sass / SCSS](arquitectura por partials con `@use`/`@forward`)
 - CSS3 — Grid y Flexbox
-- [Google Fonts](https://fonts.google.com/): Playfair Display · Barlow
+- [Google Fonts]: Playfair Display · Barlow
 
 ## Requisitos previos
 
-- [Node.js](https://nodejs.org/) y npm (para compilar el SCSS), o el CLI de [Dart Sass](https://sass-lang.com/dart-sass/) instalado globalmente
+- [Node.js] y npm (para compilar el SCSS), o el CLI de [Dart Sass] instalado globalmente
 - Un navegador web moderno
 
 ## Instalación y configuración
