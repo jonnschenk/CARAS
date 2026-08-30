@@ -2,6 +2,8 @@
 
 Landing page de suscripción al newsletter de **CARAS**, con la agenda social, de moda y cultura de México. Proyecto académico de práctica, construido en entregas incrementales donde cada fase parte del resultado de la anterior sin rediseñar desde cero.
 
+🔗 Demo: [https://jonnschenk.github.io/CARAS/](https://jonnschenk.github.io/CARAS/)
+
 ## Roadmap
 
 - [x] **Estructura HTML semántica y CSS base responsive**
@@ -19,9 +21,6 @@ Landing page de suscripción al newsletter de **CARAS**, con la agenda social, d
 - [ ] **SEO, conversión, performance y deploy**
   Meta tags y jerarquía de encabezados, CTAs más persuasivos con lógica de A/B testing, optimización de imágenes y lazy loading, medición con Lighthouse/PageSpeed, deploy final en Netlify.
 
-## Demostración
-
-Aún no cuenta con despliegue en línea. Mientras tanto, puedes verla abriendo https://jonnschenk.github.io/CARAS/.
 
 ## Tecnologías utilizadas
 
@@ -103,7 +102,12 @@ CARAS/
 
 ## Autor
 
-**Jonathan M. Ramírez**
+Jonathan M. Ramírez
 
-- GitHub: https://github.com/jonnschenk
-- LinkedIn: https://www.linkedin.com/in/jonathan-ram%C3%ADrez-2b0043246/
+- Email: [jonathanrott.dev@gmail.com](mailto:jonathanrott.dev@gmail.com)
+- GitHub: [github.com/jonnschenk](https://github.com/jonnschenk)
+- LinkedIn: [linkedin.com/in/jonathan-ramírez](https://www.linkedin.com/in/jonathan-ramírez-2b0043246/)
+
+---
+
+© 2026 Jonathan Ramírez.
