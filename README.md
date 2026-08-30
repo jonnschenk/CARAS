@@ -1,6 +1,8 @@
 # CARAS — Newsletter Landing Page
 
-Landing page de suscripción al newsletter de **CARAS**, con la agenda social, de moda y cultura de México. Proyecto personal de práctica de maquetación con HTML y SCSS, sin frameworks de JavaScript.
+Landing page de suscripción al newsletter de **CARAS**, con la agenda social, de moda y cultura de México. Proyecto académico de práctica con un roadmap de 7 entregas incrementales (HTML/CSS → Sass → JavaScript → React/TypeScript → tests → accesibilidad → SEO/performance/deploy), cada una construida sobre el resultado de la anterior sin rediseñar desde cero.
+
+**Progreso actual:** Entregas 1 (HTML + CSS) y 2 (refactor a Sass) completadas. En curso la Entrega 3 (validación del formulario con JavaScript vanilla).
 
 ## Demostración
 
@@ -45,7 +47,7 @@ Luego abre `index.html` directamente en tu navegador.
 
 ```
 CARAS/
-├── index.html          # Marcado de la página (header, formulario, beneficios, testimonios, footer)
+├── index.html          # Marcado de la página (topbar, header/nav, hero, formulario, beneficios, testimonios, footer)
 ├── styles/
 │   └── main.css        # CSS compilado a partir de scss/ — no editar a mano
 ├── scss/
@@ -69,7 +71,9 @@ CARAS/
 
 ## Secciones
 
-- **Header** — logo, título y subtítulo de presentación.
+- **Topbar** — fecha y enlaces a redes sociales.
+- **Header** — logo, navegación principal (Estilo, Eventos, Cultura, Entrevistas, Sociales, Newsletter) y botón de suscripción; colapsa a menú hamburguesa en mobile (CSS puro, sin JS).
+- **Hero** — título y subtítulo de presentación del newsletter.
 - **Suscripción** — formulario (nombre y correo) con layout en grid.
 - **Beneficios** — grid de 3 columnas con las razones para suscribirse.
 - **Testimonios** — layout flexbox con citas de lectores.
@@ -79,7 +83,7 @@ CARAS/
 
 - **Paleta:** Rojo `#ED1E1E` · Blanco `#FFFFFF` · Negro `#141414` (texto)
 - **Tipografía:** Playfair Display (títulos y texto editorial) · Barlow (UI y etiquetas)
-- **Layout:** CSS Grid (formulario y beneficios) y Flexbox (testimonios y footer)
+- **Layout:** CSS Grid (formulario y beneficios) y Flexbox (topbar, header, testimonios y footer)
 - **Responsive:** breakpoints en `860px` y `600px`
 
 ## Autor
