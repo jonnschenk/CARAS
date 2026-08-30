@@ -12,11 +12,43 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <p class="logo">CARAS</p>
+  <div class="topbar">
+    <p class="topbar-fecha">Domingo, 30 de agosto de 2026</p>
+    <nav class="topbar-redes" aria-label="Redes sociales de CARAS">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">X</a>
+    </nav>
+  </div>
+
+  <header class="header-main">
+    <a href="index.html" class="logo">CARAS</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" hidden>
+
+    <nav class="nav-primary" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#">Estilo</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="#">Cultura</a></li>
+        <li><a href="#">Entrevistas</a></li>
+        <li><a href="#">Sociales</a></li>
+        <li><a href="index.html" class="activo" aria-current="page">Newsletter</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="btn-suscribirme">Suscribirme</button>
+      <label for="nav-toggle" class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-toggle">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </header>
+
+  <section class="hero">
     <h1 class="header-titulo">El newsletter de CARAS</h1>
     <p class="header-subtitulo">Moda, eventos y cultura de México, directo en tu correo cada semana.</p>
-  </header>
+  </section>
 
   <main>
 
