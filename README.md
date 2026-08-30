@@ -1,8 +1,23 @@
 # CARAS — Newsletter Landing Page
 
-Landing page de suscripción al newsletter de **CARAS**, con la agenda social, de moda y cultura de México. Proyecto académico de práctica con un roadmap de 7 entregas incrementales (HTML/CSS → Sass → JavaScript → React/TypeScript → tests → accesibilidad → SEO/performance/deploy), cada una construida sobre el resultado de la anterior sin rediseñar desde cero.
+Landing page de suscripción al newsletter de **CARAS**, con la agenda social, de moda y cultura de México. Proyecto académico de práctica, construido en entregas incrementales donde cada fase parte del resultado de la anterior sin rediseñar desde cero.
 
-**Progreso actual:** Entregas 1 (HTML + CSS) y 2 (refactor a Sass) completadas. En curso la Entrega 3 (validación del formulario con JavaScript vanilla).
+## Roadmap
+
+- [x] **Entrega 1 — Estructura HTML semántica y CSS base responsive**
+  Header/main/footer, logo y presentación del newsletter, formulario de suscripción (nombre, correo), sección de beneficios y testimonios simulados, maquetados con Grid/Flexbox. Sin JS ni Sass.
+- [x] **Entrega 2 — Refactor de CSS a Sass**
+  Arquitectura modular por partials (`base/`, `layout/`, `components/`, `abstracts/`), variables y mixins mapeados 1:1 a la identidad de marca, mixin `respond-to()` para media queries, nesting con `&`.
+- [ ] **Entrega 3 — Validación del formulario con JavaScript**
+  `script.js` vanilla: prevenir el submit por defecto, validar nombre no vacío y correo con regex, mensajes de error/éxito visibles con clases dedicadas.
+- [ ] **Entrega 4 — Refactor a React + TypeScript**
+  Componentes tipados (`Header`, `SubscriptionForm`, `FeaturedSection`, `Testimonials`, `Footer`), estado del formulario con `useState`, estilos modulares con Styled Components.
+- [ ] **Entrega 5 — Tests con Jest**
+  Tests de renderizado y de comportamiento por componente, lógica de validación extraída a funciones testeadas de forma independiente, cobertura verificada.
+- [ ] **Entrega 6 — Accesibilidad (WCAG)**
+  `lang` en HTML, semántica bien anidada, `alt` descriptivo, `label` enlazados a cada campo, contraste mínimo 4.5:1 / 3:1, `aria-role`/`aria-label` donde corresponda.
+- [ ] **Entrega 7 — SEO, conversión, performance y deploy**
+  Meta tags y jerarquía de encabezados, CTAs más persuasivos con lógica de A/B testing, optimización de imágenes y lazy loading, medición con Lighthouse/PageSpeed, deploy final en Netlify.
 
 ## Demostración
 
