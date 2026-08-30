@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.site-header{
+  text-align: center;
+  padding: 56px 24px 44px;
+  border-bottom: 1px solid var(--gris-linea);
+
+  @include respond-to(mobile){
+    padding: 40px 20px 32px;
+  }
+}
+
+.logo{
+  font-family: var(--fuente-editorial);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--rojo);
+  letter-spacing: .04em;
+  margin-bottom: 18px;
+}
+
+.header-titulo{
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.15;
+  max-width: 20ch;
+  margin: 0 auto 14px;
+}
+
+.header-subtitulo{
+  font-family: var(--fuente-ui);
+  font-weight: 400;
+  color: var(--gris-texto);
+  font-size: 17px;
+  max-width: 46ch;
+  margin: 0 auto;
+}

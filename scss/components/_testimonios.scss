@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+.testimonios{
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 56px 24px;
+  text-align: center;
+
+  h2{
+    color: var(--blanco);
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+.testimonios-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.testimonio{
+  flex: 1 1 280px;
+  max-width: 320px;
+  background: #1E1E1C;
+  border: 1px solid #2B2B29;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.cita{
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.autor{
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 13px;
+  color: #B8B8B4;
+}

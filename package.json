@@ -1,0 +1,13 @@
+{
+  "name": "caras-newsletter-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page de suscripción al newsletter de CARAS",
+  "scripts": {
+    "sass:build": "sass scss/main.scss styles/main.css --no-source-map --style=expanded",
+    "sass:watch": "sass scss/main.scss styles/main.css --no-source-map --style=expanded --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}

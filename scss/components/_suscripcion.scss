@@ -1,0 +1,106 @@
+@use '../abstracts' as *;
+
+.suscripcion{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 56px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+
+  @include respond-to(tablet){
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  @include respond-to(mobile){
+    padding: 40px 20px;
+  }
+}
+
+.eyebrow{
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.suscripcion-texto{
+  h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  p{
+    font-family: var(--fuente-ui);
+    color: var(--gris-texto);
+    font-size: 15px;
+  }
+}
+
+.suscripcion-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  background: var(--blanco);
+  border: 1px solid var(--gris-linea);
+  padding: 28px;
+
+  @include respond-to(mobile){
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+}
+
+.campo{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label{
+    font-family: var(--fuente-ui);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--negro);
+  }
+
+  input{
+    font-family: var(--fuente-ui);
+    font-size: 15px;
+    padding: 12px 14px;
+    border: 1px solid var(--gris-linea);
+    background: var(--crema);
+    color: var(--negro);
+
+    &:focus{
+      outline: none;
+      border-color: var(--rojo);
+    }
+  }
+}
+
+.btn-primario{
+  grid-column: 1 / -1;
+  background: var(--rojo);
+  color: var(--blanco);
+  border: none;
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 14px;
+  cursor: pointer;
+  transition: background .2s ease;
+
+  &:hover{
+    background: var(--rojo-hover);
+  }
+}
