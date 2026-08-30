@@ -1,6 +1,45 @@
 # CARAS — Newsletter Landing Page
 
-Landing page de suscripción al newsletter de **CARAS**, con la agenda social, de moda y cultura de México. Construida con HTML y SCSS (compilado a CSS), sin frameworks de JavaScript. Proyecto personal de práctica de maquetación.
+Landing page de suscripción al newsletter de **CARAS**, con la agenda social, de moda y cultura de México. Proyecto personal de práctica de maquetación con HTML y SCSS, sin frameworks de JavaScript.
+
+## Demostración
+
+Aún no cuenta con despliegue en línea. Mientras tanto, puedes verla abriendo `index.html` localmente (ver sección [Uso](#uso)).
+
+## Tecnologías utilizadas
+
+- HTML5 semántico
+- [Sass / SCSS](https://sass-lang.com/) (arquitectura por partials con `@use`/`@forward`)
+- CSS3 — Grid y Flexbox
+- [Google Fonts](https://fonts.google.com/): Playfair Display · Barlow
+
+## Requisitos previos
+
+- [Node.js](https://nodejs.org/) y npm (para compilar el SCSS), o el CLI de [Dart Sass](https://sass-lang.com/dart-sass/) instalado globalmente
+- Un navegador web moderno
+
+## Instalación y configuración
+
+```bash
+git clone <url-del-repositorio>
+cd CARAS
+npm install
+```
+
+No requiere variables de entorno ni configuración adicional.
+
+## Uso
+
+Compilar el SCSS a CSS:
+
+```bash
+npm run sass:build   # compila scss/main.scss → styles/main.css una vez
+npm run sass:watch   # recompila automáticamente al guardar cambios
+```
+
+Luego abre `index.html` directamente en tu navegador.
+
+**Importante:** edita solo los archivos dentro de `scss/`; `styles/main.css` se regenera con los comandos de arriba y no debe modificarse a mano.
 
 ## Estructura
 
@@ -39,6 +78,13 @@ CARAS/
 ## Diseño
 
 - **Paleta:** Rojo `#ED1E1E` · Blanco `#FFFFFF` · Negro `#141414` (texto)
-- **Tipografía:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) (títulos y texto editorial) · [Barlow](https://fonts.google.com/specimen/Barlow) (UI y etiquetas)
+- **Tipografía:** Playfair Display (títulos y texto editorial) · Barlow (UI y etiquetas)
 - **Layout:** CSS Grid (formulario y beneficios) y Flexbox (testimonios y footer)
 - **Responsive:** breakpoints en `860px` y `600px`
+
+## Autor
+
+**Jonathan M. Ramírez**
+
+- GitHub: https://github.com/jonnschenk
+- LinkedIn: https://www.linkedin.com/in/jonathan-ram%C3%ADrez-2b0043246/
