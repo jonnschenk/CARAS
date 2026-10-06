@@ -1,147 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CARAS | Suscríbete al newsletter</title>
-  <meta name="description" content="Suscríbete al newsletter de CARAS y recibe primero la agenda social, moda y cultura de México.">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARAS | Suscríbete al newsletter</title>
+    <meta name="description" content="Suscríbete al newsletter de CARAS y recibe primero la agenda social, moda y cultura de México.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
 
-  <div class="topbar">
-    <p class="topbar-fecha">Domingo, 30 de agosto de 2026</p>
-    <nav class="topbar-redes" aria-label="Redes sociales de CARAS">
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">X</a>
-    </nav>
-  </div>
-
-  <header class="header-main">
-    <a href="index.html" class="logo">CARAS</a>
-
-    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" hidden>
-
-    <nav class="nav-primary" aria-label="Navegación principal">
-      <ul>
-        <li><a href="#">Estilo</a></li>
-        <li><a href="#">Eventos</a></li>
-        <li><a href="#">Cultura</a></li>
-        <li><a href="#">Entrevistas</a></li>
-        <li><a href="#">Sociales</a></li>
-        <li><a href="index.html" class="activo" aria-current="page">Newsletter</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <button type="button" class="btn-suscribirme">Suscribirme</button>
-      <label for="nav-toggle" class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-toggle">
-        <span></span><span></span><span></span>
-      </label>
+    <div class="topbar">
+      <p class="topbar__fecha">Domingo, 30 de agosto de 2026</p>
+      <nav class="topbar__redes" aria-label="Redes sociales de CARAS">
+        <a href="#" class="topbar__link">Instagram</a>
+        <a href="#" class="topbar__link">Facebook</a>
+        <a href="#" class="topbar__link">X</a>
+      </nav>
     </div>
-  </header>
 
-  <section class="hero">
-    <h1 class="header-titulo">El newsletter de CARAS</h1>
-    <p class="header-subtitulo">Moda, eventos y cultura de México, directo en tu correo cada semana.</p>
-  </section>
+    <header class="header">
+      <a href="index.html" class="header__logo">CARAS</a>
 
-  <main>
+      <input type="checkbox" id="nav-toggle" class="header__toggle-input" hidden>
 
-    <section id="suscripcion" class="suscripcion" aria-labelledby="suscripcion-titulo">
-      <div class="suscripcion-texto">
-        <span class="eyebrow">Suscripción gratuita</span>
-        <h2 id="suscripcion-titulo">Únete en menos de un minuto</h2>
-        <p>Dos correos por semana. Sin spam, cancela cuando quieras.</p>
-      </div>
-
-      <form class="suscripcion-form" action="#" method="post">
-        <div class="campo">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-        </div>
-
-        <div class="campo">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
-        </div>
-
-        <button type="submit" class="btn-primario">Suscribirme</button>
-      </form>
-    </section>
-
-    <section id="beneficios" class="beneficios" aria-labelledby="beneficios-titulo">
-      <h2 id="beneficios-titulo">Por qué suscribirte</h2>
-
-      <div class="beneficios-grid">
-        <article class="beneficio">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500&auto=format&fit=crop" alt="Mesa con revista y café">
-          <h3>Agenda exclusiva</h3>
-          <p>Entérate antes que nadie de los eventos sociales, culturales y de moda más importantes del país.</p>
-        </article>
-
-        <article class="beneficio">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=500&auto=format&fit=crop" alt="Backstage de pasarela de moda">
-          <h3>Contenido detrás de cámaras</h3>
-          <p>Historias y entrevistas que no publicamos en ningún otro lugar, contadas por nuestro equipo editorial.</p>
-        </article>
-
-        <article class="beneficio">
-          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=500&auto=format&fit=crop" alt="Persona leyendo en un espacio luminoso">
-          <h3>Directo a tu correo</h3>
-          <p>Sin algoritmos ni ruido: la selección editorial de la semana en un solo lugar, listo para leer.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="testimonios" class="testimonios" aria-labelledby="testimonios-titulo">
-      <h2 id="testimonios-titulo">Lo que dicen nuestras lectoras y lectores</h2>
-
-      <div class="testimonios-grid">
-        <blockquote class="testimonio">
-          <img class="avatar" src="https://i.pravatar.cc/120?img=32" alt="Retrato de Daniela Ruiz">
-          <p class="cita">"Es lo primero que leo los lunes. La agenda de eventos me ha salvado más de una semana."</p>
-          <footer class="autor">Daniela Ruiz</footer>
-        </blockquote>
-
-        <blockquote class="testimonio">
-          <img class="avatar" src="https://i.pravatar.cc/120?img=15" alt="Retrato de Marco Aurelio Tena">
-          <p class="cita">"El tono editorial se siente distinto a cualquier otro newsletter de estilo de vida que sigo."</p>
-          <footer class="autor">Marco Aurelio Tena</footer>
-        </blockquote>
-
-        <blockquote class="testimonio">
-          <img class="avatar" src="https://i.pravatar.cc/120?img=47" alt="Retrato de Valentina Cordero">
-          <p class="cita">"Corto, bien escrito y llega justo cuando lo necesito. Ya lo recomendé a todo mi equipo."</p>
-          <footer class="autor">Valentina Cordero</footer>
-        </blockquote>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-contenido">
-      <p class="logo-footer">CARAS</p>
-
-      <nav class="footer-redes" aria-label="Redes sociales de CARAS">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">X</a>
+      <nav id="nav-primary" class="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Estilo</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Eventos</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Cultura</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Entrevistas</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Sociales</a></li>
+          <li class="nav__item"><a href="index.html" class="nav__link nav__link--activo" aria-current="page">Newsletter</a></li>
+        </ul>
       </nav>
 
-      <address class="footer-contacto">
-        <a href="mailto:contacto@caras.com.mx">contacto@caras.com.mx</a>
-        <a href="tel:+525500000000">+52 55 0000 0000</a>
-      </address>
-    </div>
+      <div class="header__actions">
+        <button type="button" class="header__btn">Suscribirme</button>
+        <label for="nav-toggle" class="header__toggle" aria-label="Abrir menú" aria-controls="nav-primary">
+          <span class="header__toggle-linea"></span>
+          <span class="header__toggle-linea"></span>
+          <span class="header__toggle-linea"></span>
+        </label>
+      </div>
+    </header>
 
-    <p class="footer-legal">© 2026 Caras México. Todos los derechos reservados.</p>
-  </footer>
+    <section class="hero">
+      <h1 class="hero__titulo">El newsletter de CARAS</h1>
+      <p class="hero__subtitulo">Moda, eventos y cultura de México, directo en tu correo cada semana.</p>
+    </section>
 
-</body>
+    <main>
+
+      <section id="suscripcion" class="suscripcion" aria-labelledby="suscripcion-titulo">
+        <div class="suscripcion__texto">
+          <span class="suscripcion__eyebrow">Suscripción gratuita</span>
+          <h2 id="suscripcion-titulo" class="suscripcion__titulo">Únete en menos de un minuto</h2>
+          <p class="suscripcion__descripcion">Dos correos por semana. Sin spam, cancela cuando quieras.</p>
+        </div>
+
+        <form id="subscriptionForm" class="suscripcion__form" action="#" method="post" novalidate>
+          <div class="campo" data-field="nombre">
+            <label for="nombre" class="campo__label">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="campo__input" placeholder="Tu nombre" required>
+            <span id="nombreError" class="campo__error" aria-live="polite"></span>
+          </div>
+
+          <div class="campo" data-field="email">
+            <label for="email" class="campo__label">Correo electrónico</label>
+            <input type="email" id="email" name="email" class="campo__input" placeholder="tu@correo.com" required>
+            <span id="emailError" class="campo__error" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="suscripcion__btn">Suscribirme</button>
+          <p id="formStatus" class="suscripcion__status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="beneficios" class="beneficios" aria-labelledby="beneficios-titulo">
+        <h2 id="beneficios-titulo" class="beneficios__titulo">Por qué suscribirte</h2>
+
+        <div class="beneficios__grid">
+          <article class="beneficio">
+            <img class="beneficio__img" src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500&auto=format&fit=crop" alt="Mesa con revista y café">
+            <h3 class="beneficio__titulo">Agenda exclusiva</h3>
+            <p class="beneficio__texto">Entérate antes que nadie de los eventos sociales, culturales y de moda más importantes del país.</p>
+          </article>
+
+          <article class="beneficio">
+            <img class="beneficio__img" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=500&auto=format&fit=crop" alt="Backstage de pasarela de moda">
+            <h3 class="beneficio__titulo">Contenido detrás de cámaras</h3>
+            <p class="beneficio__texto">Historias y entrevistas que no publicamos en ningún otro lugar, contadas por nuestro equipo editorial.</p>
+          </article>
+
+          <article class="beneficio">
+            <img class="beneficio__img" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=500&auto=format&fit=crop" alt="Persona leyendo en un espacio luminoso">
+            <h3 class="beneficio__titulo">Directo a tu correo</h3>
+            <p class="beneficio__texto">Sin algoritmos ni ruido: la selección editorial de la semana en un solo lugar, listo para leer.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="testimonios" class="testimonios" aria-labelledby="testimonios-titulo">
+        <h2 id="testimonios-titulo" class="testimonios__titulo">Lo que dicen nuestras lectoras y lectores</h2>
+
+        <div class="testimonios__grid">
+          <blockquote class="testimonio">
+            <img class="testimonio__avatar" src="https://i.pravatar.cc/120?img=32" alt="Retrato de Daniela Ruiz">
+            <p class="testimonio__cita">"Es lo primero que leo los lunes. La agenda de eventos me ha salvado más de una semana."</p>
+            <footer class="testimonio__autor">Daniela Ruiz</footer>
+          </blockquote>
+
+          <blockquote class="testimonio">
+            <img class="testimonio__avatar" src="https://i.pravatar.cc/120?img=15" alt="Retrato de Marco Aurelio Tena">
+            <p class="testimonio__cita">"El tono editorial se siente distinto a cualquier otro newsletter de estilo de vida que sigo."</p>
+            <footer class="testimonio__autor">Marco Aurelio Tena</footer>
+          </blockquote>
+
+          <blockquote class="testimonio">
+            <img class="testimonio__avatar" src="https://i.pravatar.cc/120?img=47" alt="Retrato de Valentina Cordero">
+            <p class="testimonio__cita">"Corto, bien escrito y llega justo cuando lo necesito. Ya lo recomendé a todo mi equipo."</p>
+            <footer class="testimonio__autor">Valentina Cordero</footer>
+          </blockquote>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__contenido">
+        <p class="footer__logo">CARAS</p>
+
+        <nav class="footer__redes" aria-label="Redes sociales de CARAS">
+          <a href="#" class="footer__link">Instagram</a>
+          <a href="#" class="footer__link">Facebook</a>
+          <a href="#" class="footer__link">X</a>
+        </nav>
+
+        <address class="footer__contacto">
+          <a href="mailto:contacto@caras.com.mx" class="footer__link">contacto@caras.com.mx</a>
+          <a href="tel:+525500000000" class="footer__link">+52 55 0000 0000</a>
+        </address>
+      </div>
+
+      <p class="footer__legal">© 2026 Caras México. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
 </html>

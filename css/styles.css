@@ -1,0 +1,503 @@
+@charset "UTF-8";
+/* ======================================================
+   CARAS — Newsletter landing (Entrega 1)
+   Paleta oficial: Rojo #ED1E1E · Blanco #FFFFFF
+   Tipografía oficial: Playfair Display (títulos/texto) · Barlow (secciones/fechas)
+   ====================================================== */
+.suscripcion__btn, .header__btn {
+  background: var(--rojo);
+  color: var(--blanco);
+}
+.suscripcion__btn:hover, .header__btn:hover {
+  background: var(--rojo-hover);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-editorial);
+  color: var(--negro);
+  background: var(--crema);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-editorial);
+  font-weight: 700;
+}
+
+/* ======================================================
+   CARAS — Newsletter landing (Entrega 1)
+   Paleta oficial: Rojo #ED1E1E · Blanco #FFFFFF
+   Tipografía oficial: Playfair Display (títulos/texto) · Barlow (secciones/fechas)
+   ====================================================== */
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 8px 24px;
+  background: var(--negro);
+  color: var(--blanco);
+  font-family: var(--fuente-ui);
+  font-size: 0.75rem;
+}
+@media (max-width: 600px) {
+  .topbar {
+    padding: 6px 20px;
+    font-size: 0.6875rem;
+  }
+}
+.topbar__fecha {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+}
+.topbar__redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.topbar__link:hover {
+  color: var(--rojo);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--gris-linea);
+}
+@media (max-width: 600px) {
+  .header {
+    padding: 14px 20px;
+  }
+}
+.header__logo {
+  font-family: var(--fuente-editorial);
+  font-weight: 700;
+  font-size: 1.625rem;
+  color: var(--rojo);
+  letter-spacing: 0.04em;
+}
+.header__toggle-input {
+  display: none;
+}
+.header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.header__btn {
+  border: none;
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 0.75rem;
+  padding: 10px 18px;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .header__btn {
+    padding: 9px 14px;
+  }
+}
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 24px;
+  height: 20px;
+  cursor: pointer;
+}
+@media (max-width: 860px) {
+  .header__toggle {
+    display: flex;
+  }
+}
+.header__toggle-linea {
+  display: block;
+  height: 2px;
+  background: var(--negro);
+}
+
+@media (max-width: 860px) {
+  .nav {
+    order: 3;
+    flex-basis: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+@media (max-width: 860px) {
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 4px 0;
+  }
+}
+.nav__link {
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.nav__link:hover {
+  color: var(--rojo);
+}
+.nav__link--activo {
+  color: var(--rojo);
+  border-bottom-color: var(--rojo);
+}
+
+@media (max-width: 860px) {
+  .header__toggle-input:checked ~ .nav {
+    max-height: 300px;
+    padding-top: 8px;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding: 56px 24px 44px;
+  border-bottom: 1px solid var(--gris-linea);
+}
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 20px 32px;
+  }
+}
+.hero__titulo {
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.15;
+  max-width: 20ch;
+  margin: 0 auto 14px;
+}
+.hero__subtitulo {
+  font-family: var(--fuente-ui);
+  font-weight: 400;
+  color: var(--gris-texto);
+  font-size: 1.0625rem;
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+/* ======================================================
+   CARAS — Newsletter landing (Entrega 1)
+   Paleta oficial: Rojo #ED1E1E · Blanco #FFFFFF
+   Tipografía oficial: Playfair Display (títulos/texto) · Barlow (secciones/fechas)
+   ====================================================== */
+.footer {
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 40px 24px 24px;
+}
+.footer__contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto 24px;
+}
+@media (max-width: 600px) {
+  .footer__contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.footer__logo {
+  font-family: var(--fuente-editorial);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.footer__redes {
+  display: flex;
+  gap: 22px;
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.footer__contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--fuente-ui);
+  font-size: 0.8125rem;
+  font-style: normal;
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .footer__contacto {
+    text-align: center;
+    align-items: center;
+  }
+}
+.footer__legal {
+  text-align: center;
+  font-family: var(--fuente-ui);
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ======================================================
+   CARAS — Newsletter landing (Entrega 1)
+   Paleta oficial: Rojo #ED1E1E · Blanco #FFFFFF
+   Tipografía oficial: Playfair Display (títulos/texto) · Barlow (secciones/fechas)
+   ====================================================== */
+.suscripcion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 56px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+@media (max-width: 860px) {
+  .suscripcion {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+@media (max-width: 600px) {
+  .suscripcion {
+    padding: 40px 20px;
+  }
+}
+.suscripcion__eyebrow {
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  display: block;
+  margin-bottom: 12px;
+}
+.suscripcion__titulo {
+  font-size: 1.875rem;
+  margin-bottom: 10px;
+}
+.suscripcion__descripcion {
+  font-family: var(--fuente-ui);
+  color: var(--gris-texto);
+  font-size: 0.9375rem;
+}
+.suscripcion__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  background: var(--blanco);
+  border: 1px solid var(--gris-linea);
+  padding: 28px;
+}
+@media (max-width: 600px) {
+  .suscripcion__form {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+}
+.suscripcion__btn {
+  border: none;
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  grid-column: 1/-1;
+  font-size: 0.8125rem;
+  padding: 14px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.campo__label {
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--negro);
+}
+.campo__input {
+  font-family: var(--fuente-ui);
+  font-size: 0.9375rem;
+  padding: 12px 14px;
+  border: 1px solid var(--gris-linea);
+  background: var(--crema);
+  color: var(--negro);
+}
+.campo__input:focus {
+  outline: none;
+  border-color: var(--rojo);
+}
+
+/* ======================================================
+   CARAS — Newsletter landing (Entrega 1)
+   Paleta oficial: Rojo #ED1E1E · Blanco #FFFFFF
+   Tipografía oficial: Playfair Display (títulos/texto) · Barlow (secciones/fechas)
+   ====================================================== */
+.beneficios {
+  padding: 56px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .beneficios {
+    padding: 40px 20px;
+  }
+}
+.beneficios__titulo {
+  font-size: 1.875rem;
+  margin-bottom: 40px;
+}
+.beneficios__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: left;
+}
+@media (max-width: 860px) {
+  .beneficios__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .beneficios__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.beneficio__img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+.beneficio__titulo {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.beneficio__texto {
+  font-family: var(--fuente-ui);
+  font-size: 0.875rem;
+  color: var(--gris-texto);
+}
+
+/* ======================================================
+   CARAS — Newsletter landing (Entrega 1)
+   Paleta oficial: Rojo #ED1E1E · Blanco #FFFFFF
+   Tipografía oficial: Playfair Display (títulos/texto) · Barlow (secciones/fechas)
+   ====================================================== */
+.testimonios {
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 56px 24px;
+  text-align: center;
+}
+.testimonios__titulo {
+  color: var(--blanco);
+  font-size: 1.875rem;
+  margin-bottom: 40px;
+}
+.testimonios__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.testimonio {
+  flex: 1 1 280px;
+  max-width: 320px;
+  background: #1E1E1C;
+  border: 1px solid #2B2B29;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonio__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+.testimonio__cita {
+  font-style: italic;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.testimonio__autor {
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: #B8B8B4;
+}
+
+:root {
+  --rojo: #ED1E1E;
+  --rojo-hover: #B31414;
+  --blanco: #FFFFFF;
+  --negro: #141414; /* neutro funcional: texto de lectura */
+  --gris-texto: #4A4A48; /* neutro funcional: texto secundario */
+  --gris-linea: #E4E1D8; /* neutro funcional: divisores */
+  --crema: #FAF9F6; /* neutro funcional: fondo de página */
+  --fuente-editorial: "Playfair Display", serif;
+  --fuente-ui: "Barlow", sans-serif;
+}

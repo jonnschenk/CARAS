@@ -1,10 +1,25 @@
 @use 'variables' as *;
 
+// Base estructural compartida por todos los botones (color va por @extend, no aquí).
+@mixin btn-base {
+  border: none;
+  font-family: var(--fuente-ui);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == tablet {
-    @media (max-width: $bp-tablet) { @content; }
+    @media (max-width: $bp-tablet) {
+      @content;
+    }
   } @else if $breakpoint == mobile {
-    @media (max-width: $bp-mobile) { @content; }
+    @media (max-width: $bp-mobile) {
+      @content;
+    }
   } @else {
     @warn "Breakpoint desconocido: #{$breakpoint}";
   }

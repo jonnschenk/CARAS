@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+// Convierte un valor en px a rem, relativo a un tamaño base (por defecto 16px).
+@function px-to-rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
