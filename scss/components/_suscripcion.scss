@@ -61,9 +61,28 @@
     font-size: px-to-rem(13px);
     padding: 14px;
   }
+
+  &__status {
+    grid-column: 1 / -1;
+    font-family: var(--fuente-ui);
+    font-weight: 700;
+    font-size: px-to-rem(14px);
+    text-align: center;
+
+    &:empty {
+      display: none;
+    }
+
+    &--error {
+      color: var(--rojo-hover);
+    }
+
+    &--success {
+      color: var(--exito);
+    }
+  }
 }
 
-// ---------- Campo de formulario ----------
 .campo {
   display: flex;
   flex-direction: column;
@@ -90,5 +109,20 @@
       outline: none;
       border-color: var(--rojo);
     }
+  }
+
+  &__error {
+    font-family: var(--fuente-ui);
+    font-size: px-to-rem(12px);
+    color: var(--rojo-hover);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &--error &__input {
+    border-color: var(--rojo);
+    background: var(--blanco);
   }
 }

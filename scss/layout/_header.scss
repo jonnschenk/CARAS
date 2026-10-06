@@ -1,6 +1,5 @@
 @use '../abstracts' as *;
 
-// ---------- Topbar ----------
 .topbar {
   display: flex;
   flex-wrap: wrap;
@@ -32,14 +31,11 @@
     text-transform: uppercase;
   }
 
-  &__link {
-    &:hover {
-      color: var(--rojo);
-    }
+  &__link:hover {
+    color: var(--rojo);
   }
 }
 
-// ---------- Header ----------
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -59,10 +55,6 @@
     font-size: px-to-rem(26px);
     color: var(--rojo);
     letter-spacing: .04em;
-  }
-
-  &__toggle-input {
-    display: none;
   }
 
   &__actions {
@@ -105,7 +97,6 @@
   }
 }
 
-// ---------- Navegación principal ----------
 .nav {
   @include respond-to(tablet) {
     order: 3;
@@ -150,7 +141,6 @@
   }
 }
 
-// Menú móvil abierto (checkbox hack)
 .header__toggle-input:checked ~ .nav {
   @include respond-to(tablet) {
     max-height: 300px;
@@ -158,7 +148,6 @@
   }
 }
 
-// ---------- Hero ----------
 .hero {
   text-align: center;
   padding: 56px 24px 44px;
