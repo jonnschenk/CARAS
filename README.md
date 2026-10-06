@@ -9,9 +9,9 @@ Landing page de suscripción al newsletter de **CARAS**, con la agenda social, d
 - [x] **Estructura HTML semántica y CSS base responsive**
   Header/main/footer, logo y presentación del newsletter, formulario de suscripción (nombre, correo), sección de beneficios y testimonios simulados, maquetados con Grid/Flexbox. Sin JS ni Sass.
 - [x] **Refactor de CSS a Sass**
-  Arquitectura modular por partials (`base/`, `layout/`, `components/`, `abstracts/`), variables y mixins mapeados 1:1 a la identidad de marca, mixin `respond-to()` para media queries, nesting con `&`.
-- [ ] **Validación del formulario con JavaScript**
-  `script.js` vanilla: prevenir el submit por defecto, validar nombre no vacío y correo con regex, mensajes de error/éxito visibles con clases dedicadas.
+  Arquitectura modular por partials (`base/`, `layout/`, `components/`, `abstracts/`), variables y mixins mapeados 1:1 a la identidad de marca, mixin `respond-to()` para media queries, clases con metodología BEM y nesting con `&`.
+- [x] **Validación del formulario con JavaScript**
+  `script.js` vanilla: prevenir el submit por defecto, validar nombre no vacío y correo con regex, mensajes de error/éxito visibles con modificadores BEM (`campo--error`, `suscripcion__status--error`, `suscripcion__status--success`).
 - [ ] **Refactor a React + TypeScript**
   Componentes tipados (`Header`, `SubscriptionForm`, `FeaturedSection`, `Testimonials`, `Footer`), estado del formulario con `useState`, estilos modulares con Styled Components.
 - [ ] **Tests con Jest**
@@ -27,6 +27,8 @@ Landing page de suscripción al newsletter de **CARAS**, con la agenda social, d
 - HTML5 semántico
 - Sass / SCSS (arquitectura por partials con `@use`/`@forward`)
 - CSS3 — Grid y Flexbox
+- Metodología BEM para el nombrado de clases
+- JavaScript vanilla (validación del formulario)
 - Google Fonts: Playfair Display · Barlow
 
 ## Requisitos previos
@@ -62,6 +64,7 @@ Luego abre `index.html` directamente en tu navegador.
 ```
 CARAS/
 ├── index.html          # Marcado de la página (topbar, header/nav, hero, formulario, beneficios, testimonios, footer)
+├── script.js           # Validación del formulario de suscripción
 ├── css/
 │   └── styles.css      # CSS compilado a partir de scss/ — no editar a mano
 ├── scss/
@@ -69,7 +72,7 @@ CARAS/
 │   ├── abstracts/
 │   │   ├── _variables.scss    # Paleta, tipografía y breakpoints
 │   │   ├── _functions.scss    # Función px-to-rem() para tamaños de fuente
-│   │   ├── _mixins.scss       # Mixin respond-to() (media queries) y btn-base() (botón estandarizado)
+│   │   ├── _mixins.scss       # Mixin respond-to() (media queries por mapa de breakpoints) y btn-base()
 │   │   ├── _placeholders.scss # %btn-rojo — variante de color compartida vía @extend
 │   │   └── _index.scss        # Reexporta variables + funciones + mixins + placeholders
 │   ├── base/
@@ -90,10 +93,26 @@ CARAS/
 - **Topbar** — fecha y enlaces a redes sociales.
 - **Header** — logo, navegación principal (Estilo, Eventos, Cultura, Entrevistas, Sociales, Newsletter) y botón de suscripción; colapsa a menú hamburguesa en mobile (CSS puro, sin JS).
 - **Hero** — título y subtítulo de presentación del newsletter.
-- **Suscripción** — formulario (nombre y correo) con layout en grid.
+- **Suscripción** — formulario (nombre y correo) con layout en grid y validación en JavaScript.
 - **Beneficios** — grid de 3 columnas con las razones para suscribirse.
 - **Testimonios** — layout flexbox con citas de lectores.
 - **Footer** — redes sociales y datos de contacto.
+
+## Convención de clases (BEM)
+
+Cada sección es un bloque; sus partes son elementos (`bloque__elemento`) y sus variantes o estados son modificadores (`bloque__elemento--modificador`). En SCSS se anidan con `&__` y `&--`.
+
+| Bloque | Elementos principales |
+|---|---|
+| `topbar` | `__fecha`, `__redes`, `__link` |
+| `header` | `__logo`, `__actions`, `__btn`, `__toggle`, `__toggle-input`, `__toggle-linea` |
+| `nav` | `__list`, `__item`, `__link`, `__link--activo` |
+| `hero` | `__titulo`, `__subtitulo` |
+| `suscripcion` | `__texto`, `__eyebrow`, `__titulo`, `__descripcion`, `__form`, `__btn`, `__status` |
+| `campo` | `__label`, `__input`, `__error`, `campo--error` |
+| `beneficios` / `beneficio` | `__titulo`, `__grid` / `__img`, `__titulo`, `__texto` |
+| `testimonios` / `testimonio` | `__titulo`, `__grid` / `__avatar`, `__cita`, `__autor` |
+| `footer` | `__contenido`, `__logo`, `__redes`, `__contacto`, `__link`, `__legal` |
 
 ## Diseño
 

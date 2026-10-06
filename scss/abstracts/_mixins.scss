@@ -1,6 +1,11 @@
+@use 'sass:map';
 @use 'variables' as *;
 
-// Base estructural compartida por todos los botones (color va por @extend, no aquí).
+$breakpoints: (
+  tablet: $bp-tablet,
+  mobile: $bp-mobile,
+);
+
 @mixin btn-base {
   border: none;
   font-family: var(--fuente-ui);
@@ -12,15 +17,7 @@
 }
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == tablet {
-    @media (max-width: $bp-tablet) {
-      @content;
-    }
-  } @else if $breakpoint == mobile {
-    @media (max-width: $bp-mobile) {
-      @content;
-    }
-  } @else {
-    @warn "Breakpoint desconocido: #{$breakpoint}";
+  @media (max-width: map.get($breakpoints, $breakpoint)) {
+    @content;
   }
 }

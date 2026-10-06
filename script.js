@@ -5,89 +5,52 @@ const formStatus = document.getElementById('formStatus');
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function showFieldError(input, message) {
-  const field = input.closest('.campo');
-  const errorElement = document.getElementById(`${input.name}Error`);
-
-  if (!field || !errorElement) return;
-
-  field.classList.toggle('campo--error', Boolean(message));
-  field.classList.remove('campo--valid');
-  errorElement.textContent = message || '';
+function setFieldError(input, message) {
+  input.closest('.campo').classList.toggle('campo--error', Boolean(message));
+  document.getElementById(`${input.name}Error`).textContent = message;
+  return !message;
 }
 
 function setFormStatus(message, type) {
-  if (!formStatus) return;
-
   formStatus.textContent = message;
-  formStatus.classList.remove('suscripcion__status--error', 'suscripcion__status--success');
-
-  if (type) {
-    formStatus.classList.add(`suscripcion__status--${type}`);
-  }
+  formStatus.className = type ? `suscripcion__status suscripcion__status--${type}` : 'suscripcion__status';
 }
 
 function validateName() {
-  const value = nombreInput.value.trim();
-
-  if (!value) {
-    showFieldError(nombreInput, 'Por favor, ingresa tu nombre.');
-    return false;
-  }
-
-  showFieldError(nombreInput, '');
-  return true;
+  const message = nombreInput.value.trim() ? '' : 'Por favor, ingresa tu nombre.';
+  return setFieldError(nombreInput, message);
 }
 
 function validateEmail() {
   const value = emailInput.value.trim();
+  let message = '';
 
   if (!value) {
-    showFieldError(emailInput, 'Ingresa tu correo electrónico.');
-    return false;
+    message = 'Ingresa tu correo electrónico.';
+  } else if (!emailRegex.test(value)) {
+    message = 'El correo no tiene un formato válido.';
   }
 
-  if (!emailRegex.test(value)) {
-    showFieldError(emailInput, 'El correo no tiene un formato válido.');
-    return false;
-  }
-
-  showFieldError(emailInput, '');
-  return true;
+  return setFieldError(emailInput, message);
 }
 
-function validateForm() {
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
   const isNameValid = validateName();
   const isEmailValid = validateEmail();
 
-  if (!isNameValid || !isEmailValid) {
+  if (isNameValid && isEmailValid) {
+    setFormStatus('¡Gracias! Tu suscripción fue enviada con éxito.', 'success');
+  } else {
     setFormStatus('Corrija los errores para continuar.', 'error');
-    return false;
   }
+});
 
-  setFormStatus('¡Gracias! Tu suscripción fue enviada con éxito.', 'success');
-  return true;
-}
-
-if (form) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    validateForm();
-  });
-
-  [nombreInput, emailInput].forEach((input) => {
-    input.addEventListener('input', () => {
-      if (input === nombreInput) {
-        validateName();
-      }
-
-      if (input === emailInput) {
-        validateEmail();
-      }
-
-      if (nombreInput.value.trim() && emailInput.value.trim() && emailRegex.test(emailInput.value.trim())) {
-        setFormStatus('', '');
-      }
-    });
-  });
-}
+nombreInput.addEventListener('input', validateName);
+emailInput.addEventListener('input', validateEmail);
+form.addEventListener('input', () => {
+  if (formStatus.classList.contains('suscripcion__status--error')) {
+    setFormStatus('');
+  }
+});
