@@ -12,14 +12,14 @@
 @use 'components/beneficios';
 @use 'components/testimonios';
 
-:root{
+:root {
   --rojo: #{$color-rojo};
   --rojo-hover: #{$color-rojo-hover};
   --blanco: #{$color-blanco};
-  --negro: #{$color-negro};          /* neutro funcional: texto de lectura */
-  --gris-texto: #{$color-gris-texto};     /* neutro funcional: texto secundario */
-  --gris-linea: #{$color-gris-linea};     /* neutro funcional: divisores */
-  --crema: #{$color-crema};          /* neutro funcional: fondo de página */
+  --negro: #{$color-negro}; /* neutro funcional: texto de lectura */
+  --gris-texto: #{$color-gris-texto}; /* neutro funcional: texto secundario */
+  --gris-linea: #{$color-gris-linea}; /* neutro funcional: divisores */
+  --crema: #{$color-crema}; /* neutro funcional: fondo de página */
 
   --fuente-editorial: "Playfair Display", serif;
   --fuente-ui: "Barlow", sans-serif;

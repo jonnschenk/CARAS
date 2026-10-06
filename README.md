@@ -25,13 +25,13 @@ Landing page de suscripción al newsletter de **CARAS**, con la agenda social, d
 ## Tecnologías utilizadas
 
 - HTML5 semántico
-- [Sass / SCSS](arquitectura por partials con `@use`/`@forward`)
+- Sass / SCSS (arquitectura por partials con `@use`/`@forward`)
 - CSS3 — Grid y Flexbox
-- [Google Fonts]: Playfair Display · Barlow
+- Google Fonts: Playfair Display · Barlow
 
 ## Requisitos previos
 
-- [Node.js] y npm (para compilar el SCSS), o el CLI de [Dart Sass] instalado globalmente
+- Node.js y npm (para compilar el SCSS), o el CLI de Dart Sass instalado globalmente
 - Un navegador web moderno
 
 ## Instalación y configuración
@@ -49,27 +49,29 @@ No requiere variables de entorno ni configuración adicional.
 Compilar el SCSS a CSS:
 
 ```bash
-npm run sass:build   # compila scss/main.scss → styles/main.css una vez
+npm run sass:build   # compila scss/main.scss → css/styles.css una vez
 npm run sass:watch   # recompila automáticamente al guardar cambios
 ```
 
 Luego abre `index.html` directamente en tu navegador.
 
-**Importante:** edita solo los archivos dentro de `scss/`; `styles/main.css` se regenera con los comandos de arriba y no debe modificarse a mano.
+**Importante:** edita solo los archivos dentro de `scss/`; `css/styles.css` se regenera con los comandos de arriba y no debe modificarse a mano.
 
 ## Estructura
 
 ```
 CARAS/
 ├── index.html          # Marcado de la página (topbar, header/nav, hero, formulario, beneficios, testimonios, footer)
-├── styles/
-│   └── main.css        # CSS compilado a partir de scss/ — no editar a mano
+├── css/
+│   └── styles.css      # CSS compilado a partir de scss/ — no editar a mano
 ├── scss/
 │   ├── main.scss              # Punto de entrada: importa partials y define custom properties
 │   ├── abstracts/
 │   │   ├── _variables.scss    # Paleta, tipografía y breakpoints
-│   │   ├── _mixins.scss       # Mixin respond-to() para media queries
-│   │   └── _index.scss        # Reexporta variables + mixins
+│   │   ├── _functions.scss    # Función px-to-rem() para tamaños de fuente
+│   │   ├── _mixins.scss       # Mixin respond-to() (media queries) y btn-base() (botón estandarizado)
+│   │   ├── _placeholders.scss # %btn-rojo — variante de color compartida vía @extend
+│   │   └── _index.scss        # Reexporta variables + funciones + mixins + placeholders
 │   ├── base/
 │   │   └── _reset.scss        # Reset y estilos base (body, img, a, headings)
 │   ├── layout/
