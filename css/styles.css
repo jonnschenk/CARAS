@@ -347,6 +347,7 @@ h3 {
 }
 .suscripcion__status--success {
   color: var(--exito);
+  font-size: 1.0625rem;
 }
 
 .campo {
@@ -376,6 +377,7 @@ h3 {
 }
 .campo__error {
   font-family: var(--fuente-ui);
+  font-weight: 700;
   font-size: 0.75rem;
   color: var(--rojo-hover);
 }

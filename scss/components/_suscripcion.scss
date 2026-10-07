@@ -79,6 +79,7 @@
 
     &--success {
       color: var(--exito);
+      font-size: px-to-rem(17px);
     }
   }
 }
@@ -113,6 +114,7 @@
 
   &__error {
     font-family: var(--fuente-ui);
+    font-weight: 700;
     font-size: px-to-rem(12px);
     color: var(--rojo-hover);
 

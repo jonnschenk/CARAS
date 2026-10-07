@@ -49,8 +49,4 @@ form.addEventListener('submit', (event) => {
 
 nombreInput.addEventListener('input', validateName);
 emailInput.addEventListener('input', validateEmail);
-form.addEventListener('input', () => {
-  if (formStatus.classList.contains('suscripcion__status--error')) {
-    setFormStatus('');
-  }
-});
+form.addEventListener('input', () => setFormStatus(''));
