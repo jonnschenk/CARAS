@@ -1,4 +1,5 @@
 import { Header } from './components/Header/Header';
+import { SubscriptionForm } from './components/SubscriptionForm/SubscriptionForm';
 import { FeaturedSection } from './components/FeaturedSection/FeaturedSection';
 import { Testimonials } from './components/Testimonials/Testimonials';
 import { Footer } from './components/Footer/Footer';
@@ -15,6 +16,11 @@ function App() {
       />
 
       <main>
+        <SubscriptionForm
+          eyebrow="Suscripción gratuita"
+          title="Únete en menos de un minuto"
+          description="Dos correos por semana. Sin spam, cancela cuando quieras."
+        />
         <FeaturedSection title="Por qué suscribirte" benefits={benefits} />
         <Testimonials
           title="Lo que dicen nuestras lectoras y lectores"
