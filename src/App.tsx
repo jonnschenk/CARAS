@@ -1,5 +1,12 @@
+import { Header } from './components/Header/Header';
+
 function App() {
-  return <h1>El newsletter de CARAS</h1>;
+  return (
+    <Header
+      title="El newsletter de CARAS"
+      subtitle="Moda, eventos y cultura de México, directo en tu correo cada semana."
+    />
+  );
 }
 
 export default App;
