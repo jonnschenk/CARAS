@@ -9,110 +9,89 @@ Landing page de suscripción al newsletter de **CARAS**, con la agenda social, d
 - [x] **Estructura HTML semántica y CSS base responsive**
   Header/main/footer, logo y presentación del newsletter, formulario de suscripción (nombre, correo), sección de beneficios y testimonios simulados, maquetados con Grid/Flexbox. Sin JS ni Sass.
 - [x] **Refactor de CSS a Sass**
-  Arquitectura modular por partials (`base/`, `layout/`, `components/`, `abstracts/`), variables y mixins mapeados 1:1 a la identidad de marca, mixin `respond-to()` para media queries, clases con metodología BEM y nesting con `&`.
+  Arquitectura modular por partials, variables y mixins mapeados 1:1 a la identidad de marca, mixin `respond-to()` para media queries, clases con metodología BEM y nesting con `&`.
 - [x] **Validación del formulario con JavaScript**
-  `script.js` vanilla: prevenir el submit por defecto, validar nombre no vacío y correo con regex, mensajes de error/éxito visibles con modificadores BEM (`campo--error`, `suscripcion__status--error`, `suscripcion__status--success`).
-- [ ] **Refactor a React + TypeScript**
-  Componentes tipados (`Header`, `SubscriptionForm`, `FeaturedSection`, `Testimonials`, `Footer`), estado del formulario con `useState`, estilos modulares con Styled Components.
+  `script.js` vanilla: prevenir el submit por defecto, validar nombre no vacío y correo con regex, mensajes de error/éxito visibles.
+- [x] **Refactor a React + TypeScript**
+  Componentes tipados (`Header`, `SubscriptionForm`, `FeaturedSection`, `Testimonials`, `Footer`), estado del formulario con `useState` en un hook propio, estilos modulares con Styled Components y tema de marca tipado.
 - [ ] **Tests con Jest**
-  Tests de renderizado y de comportamiento por componente, lógica de validación extraída a funciones testeadas de forma independiente, cobertura verificada.
+  Tests de renderizado y de comportamiento por componente, lógica de validación testeada de forma independiente, cobertura verificada.
 - [ ] **Accesibilidad (WCAG)**
-  `lang` en HTML, semántica bien anidada, `alt` descriptivo, `label` enlazados a cada campo, contraste mínimo 4.5:1 / 3:1, `aria-role`/`aria-label` donde corresponda.
+  `lang` en HTML, semántica bien anidada, `alt` descriptivo, `label` enlazados a cada campo, contraste mínimo 4.5:1 / 3:1, atributos ARIA donde corresponda.
 - [ ] **SEO, conversión, performance y deploy**
-  Meta tags y jerarquía de encabezados, CTAs más persuasivos con lógica de A/B testing, optimización de imágenes y lazy loading, medición con Lighthouse/PageSpeed, deploy final en Netlify.
-
+  Meta tags y jerarquía de encabezados, CTAs con lógica de A/B testing, optimización de imágenes y lazy loading, medición con Lighthouse/PageSpeed, deploy final en Netlify.
 
 ## Tecnologías utilizadas
 
-- HTML5 semántico
-- Sass / SCSS (arquitectura por partials con `@use`/`@forward`)
-- CSS3 — Grid y Flexbox
-- Metodología BEM para el nombrado de clases
-- JavaScript vanilla (validación del formulario)
+- React 19 + TypeScript
+- Vite (entorno de desarrollo y build)
+- Styled Components (estilos modulares por componente y tema de marca)
+- ESLint
 - Google Fonts: Playfair Display · Barlow
+
+> **Nota sobre Create React App:** el enunciado sugiere iniciar el proyecto con Create React App. Se usó **Vite** con la plantilla `react-ts` porque CRA está descontinuado y presenta conflictos con React 19. El resultado cumple los mismos requisitos: proyecto React con TypeScript y estructura `src/components`, `src/hooks` y `src/styles`.
 
 ## Requisitos previos
 
-- Node.js y npm (para compilar el SCSS), o el CLI de Dart Sass instalado globalmente
+- Node.js 20 o superior y npm
 - Un navegador web moderno
 
-## Instalación y configuración
+## Instalación
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/jonnschenk/CARAS.git
 cd CARAS
 npm install
 ```
 
-No requiere variables de entorno ni configuración adicional.
+No requiere variables de entorno.
 
 ## Uso
 
-Compilar el SCSS a CSS:
-
 ```bash
-npm run sass:build   # compila scss/main.scss → css/styles.css una vez
-npm run sass:watch   # recompila automáticamente al guardar cambios
+npm run dev       # servidor de desarrollo en http://localhost:5173
+npm run build     # revisa los tipos con TypeScript y genera la versión de producción en dist/
+npm run preview   # sirve localmente la versión de producción
+npm run lint      # revisa el código con ESLint
 ```
-
-Luego abre `index.html` directamente en tu navegador.
-
-**Importante:** edita solo los archivos dentro de `scss/`; `css/styles.css` se regenera con los comandos de arriba y no debe modificarse a mano.
 
 ## Estructura
 
 ```
 CARAS/
-├── index.html          # Marcado de la página (topbar, header/nav, hero, formulario, beneficios, testimonios, footer)
-├── script.js           # Validación del formulario de suscripción
-├── css/
-│   └── styles.css      # CSS compilado a partir de scss/ — no editar a mano
-├── scss/
-│   ├── main.scss              # Punto de entrada: importa partials y define custom properties
-│   ├── abstracts/
-│   │   ├── _variables.scss    # Paleta, tipografía y breakpoints
-│   │   ├── _functions.scss    # Función px-to-rem() para tamaños de fuente
-│   │   ├── _mixins.scss       # Mixin respond-to() (media queries por mapa de breakpoints) y btn-base()
-│   │   ├── _placeholders.scss # %btn-rojo — variante de color compartida vía @extend
-│   │   └── _index.scss        # Reexporta variables + funciones + mixins + placeholders
-│   ├── base/
-│   │   └── _reset.scss        # Reset y estilos base (body, img, a, headings)
-│   ├── layout/
-│   │   ├── _header.scss
-│   │   └── _footer.scss
-│   └── components/
-│       ├── _suscripcion.scss
-│       ├── _beneficios.scss
-│       └── _testimonios.scss
-├── package.json        # Scripts de compilación de Sass
-└── README.md
+├── index.html                  # HTML base: idioma, meta tags, fuentes y <div id="root">
+├── src/
+│   ├── main.tsx                # Punto de entrada: ThemeProvider + GlobalStyles + App
+│   ├── App.tsx                 # Arma la página con los componentes y les pasa los datos por props
+│   ├── components/
+│   │   ├── Header/             # Topbar, logo, navegación con menú hamburguesa y hero
+│   │   ├── SubscriptionForm/   # Formulario de suscripción con inputs controlados
+│   │   ├── FeaturedSection/    # Beneficios de suscribirse
+│   │   ├── Testimonials/       # Testimonios de lectores
+│   │   └── Footer/             # Redes sociales y contacto
+│   ├── hooks/
+│   │   └── useSubscriptionForm.ts  # Estado del formulario (useState), handleChange y handleSubmit
+│   ├── utils/
+│   │   └── validation.ts       # Funciones puras de validación de nombre y correo
+│   ├── data/                   # Contenido tipado: beneficios, testimonios, navegación y redes
+│   ├── types/
+│   │   └── index.ts            # Interfaces y tipos de la aplicación
+│   └── styles/
+│       ├── theme.ts            # Colores, fuentes y breakpoints de la marca
+│       ├── styled.d.ts         # Tipado del tema para Styled Components
+│       ├── GlobalStyles.ts     # Reset y estilos base
+│       └── mixins.ts           # Estilos reutilizables de botón
+└── legacy/                     # Versión HTML + Sass + JS de las entregas 1 a 3, como referencia
 ```
 
-## Secciones
+Cada componente vive en su propia carpeta con dos archivos: `Componente.tsx` (estructura y lógica) y `Componente.styles.ts` (estilos con Styled Components).
 
-- **Topbar** — fecha y enlaces a redes sociales.
-- **Header** — logo, navegación principal (Estilo, Eventos, Cultura, Entrevistas, Sociales, Newsletter) y botón de suscripción; colapsa a menú hamburguesa en mobile (CSS puro, sin JS).
-- **Hero** — título y subtítulo de presentación del newsletter.
-- **Suscripción** — formulario (nombre y correo) con layout en grid y validación en JavaScript.
-- **Beneficios** — grid de 3 columnas con las razones para suscribirse.
-- **Testimonios** — layout flexbox con citas de lectores.
-- **Footer** — redes sociales y datos de contacto.
+## Arquitectura
 
-## Convención de clases (BEM)
-
-Cada sección es un bloque; sus partes son elementos (`bloque__elemento`) y sus variantes o estados son modificadores (`bloque__elemento--modificador`). En SCSS se anidan con `&__` y `&--`.
-
-| Bloque | Elementos principales |
-|---|---|
-| `topbar` | `__fecha`, `__redes`, `__link` |
-| `header` | `__logo`, `__actions`, `__btn`, `__toggle`, `__toggle-input`, `__toggle-linea` |
-| `nav` | `__list`, `__item`, `__link`, `__link--activo` |
-| `hero` | `__titulo`, `__subtitulo` |
-| `suscripcion` | `__texto`, `__eyebrow`, `__titulo`, `__descripcion`, `__form`, `__btn`, `__status` |
-| `campo` | `__label`, `__input`, `__error`, `campo--error` |
-| `beneficios` / `beneficio` | `__titulo`, `__grid` / `__img`, `__titulo`, `__texto` |
-| `testimonios` / `testimonio` | `__titulo`, `__grid` / `__avatar`, `__cita`, `__autor` |
-| `footer` | `__contenido`, `__logo`, `__redes`, `__contacto`, `__link`, `__legal` |
+- **Datos tipados:** el contenido (beneficios, testimonios, redes, navegación) vive en `src/data/` como listas tipadas con las interfaces de `src/types/`. Los componentes lo reciben por props, sin texto escrito dentro.
+- **Estado del formulario:** el hook `useSubscriptionForm` maneja los valores, errores y mensaje de estado con tres `useState` tipados. El componente `SubscriptionForm` solo dibuja la interfaz.
+- **Validación separada:** `src/utils/validation.ts` contiene funciones puras, independientes de React, listas para probarse en la entrega de tests.
+- **Tema de marca:** los valores de la identidad visual viven en `src/styles/theme.ts` y se leen desde cualquier componente con `ThemeProvider`. Los modificadores de BEM se reemplazaron por props de estilo transitorias (`$error`, `$activo`, `$abierto`).
 
 ## Diseño
 

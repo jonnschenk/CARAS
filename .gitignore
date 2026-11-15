@@ -2,3 +2,8 @@ node_modules/
 .sass-cache/
 .DS_Store
 claude.md
+
+# Vite
+dist
+*.log
+*.local

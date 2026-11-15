@@ -112,24 +112,20 @@ footer con redes sociales y contacto. Responsive. Sin JS ni SASS.
 - Deploy final en un servicio como Netlify.
 
 ## Estado actual
-- Entregas 1, 2 y 3 completadas. Entrega activa: **4 de 7**.
-- Alcance ya cubierto (entregas 1-3): landing de suscripción al newsletter —
-  topbar + header con logo/nav/CTA, hero con título/subtítulo, formulario de
-  suscripción (Grid), sección de beneficios (Grid), testimonios simulados
-  (Flexbox), footer institucional (Flexbox). HTML semántico, responsive con
-  media queries. CSS migrado a Sass: estructura modular `base/`, `layout/`,
-  `components/`, `abstracts/` (`_variables.scss`, `_mixins.scss`), variables
-  mapeadas a la identidad de marca, mixin `respond-to()` para media queries,
-  nesting con `&`.
-- Alcance de la entrega 3 completado: validación del formulario con
-  `script.js` — prevenir submit por defecto, validar nombre no vacío y correo
-  con regex, mensajes de error/éxito por clase dedicada, y enlace del script en
-  el HTML.
-- Alcance de la entrega 4 (próxima): migración a React + TypeScript con
-  componentes, `useState` y tipado.
-- Archivos base: `index.html`, `css/styles.css` (compilado desde `scss/`),
-  `script.js`
-
+- Entregas 1, 2, 3 y 4 completadas. Entrega activa: **5 de 7**.
+- Alcance de las entregas 1-3 (conservado en `legacy/`): landing en HTML
+  semántico, Sass modular con BEM y validación del formulario en `script.js`.
+- Alcance de la entrega 4 completado: migración a React + TypeScript con Vite
+  (en lugar de Create React App, descontinuado). Componentes `Header`,
+  `SubscriptionForm`, `FeaturedSection`, `Testimonials` y `Footer`, cada uno
+  con su archivo de estilos de Styled Components. Interfaces en
+  `src/types/index.ts`, datos tipados en `src/data/`, tema de marca en
+  `src/styles/theme.ts`, estado del formulario con `useState` en el hook
+  `src/hooks/useSubscriptionForm.ts` y validación como funciones puras en
+  `src/utils/validation.ts`.
+- Alcance de la entrega 5 (próxima): tests con Jest por componente y para las
+  funciones de `src/utils/validation.ts`.
+  
 ## Reglas de trabajo 
 - Trabajar únicamente sobre el alcance de la entrega activa (ver "Estado
   actual"). No adelantar Sass, React, TypeScript, tests, o JS de validación
