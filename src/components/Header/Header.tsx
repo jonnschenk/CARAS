@@ -3,6 +3,18 @@ import { socialLinks } from '../../data/socialLinks';
 import { navLinks } from '../../data/navLinks';
 import * as S from './Header.styles';
 
+// Fecha de hoy en español, p. ej. "Domingo, 15 de noviembre de 2026"
+function getFechaDeHoy(): string {
+  const fecha = new Intl.DateTimeFormat('es-MX', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date());
+
+  return fecha.charAt(0).toUpperCase() + fecha.slice(1);
+}
+
 interface HeaderProps {
   title: string;
   subtitle: string;
@@ -18,7 +30,7 @@ export function Header({ title, subtitle }: HeaderProps) {
   return (
     <>
       <S.Topbar>
-        <S.TopbarFecha>Domingo, 30 de agosto de 2026</S.TopbarFecha>
+        <S.TopbarFecha>{getFechaDeHoy()}</S.TopbarFecha>
         <S.TopbarRedes aria-label="Redes sociales de CARAS">
           {socialLinks.map((link) => (
             <S.TopbarLink key={link.name} href={link.href}>

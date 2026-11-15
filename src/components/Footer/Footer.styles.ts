@@ -7,15 +7,15 @@ export const FooterWrapper = styled.footer`
 `;
 
 export const Contenido = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    max-width: 1080px;
-    margin: 0 auto 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto 24px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column;
     text-align: center;
   }
@@ -38,15 +38,15 @@ export const Redes = styled.nav`
 `;
 
 export const Contacto = styled.address`
- display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-family: ${({ theme }) => theme.fonts.ui};
-    fonst-size: 0.8125rem;
-    font-style: normal;
-    text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: ${({ theme }) => theme.fonts.ui};
+  font-size: 0.8125rem;
+  font-style: normal;
+  text-align: right;
 
-@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     text-align: center;
     align-items: center;
   }

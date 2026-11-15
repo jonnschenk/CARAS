@@ -94,7 +94,8 @@ export const Nav = styled.nav<{ $abierto: boolean }>`
     max-height: ${({ $abierto }) => ($abierto ? '300px' : '0')};
     padding-top: ${({ $abierto }) => ($abierto ? '8px' : '0')};
     overflow: hidden;
-    transition: max-height 0.25s ease;
+    visibility: ${({ $abierto }) => ($abierto ? 'visible' : 'hidden')};
+    transition: max-height 0.25s ease, visibility 0.25s;
   }
 `;
 

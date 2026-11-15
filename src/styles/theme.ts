@@ -8,6 +8,9 @@ export const theme = {
     grisLinea: '#E4E1D8',
     crema: '#FAF9F6',
     exito: '#1E7B34',
+    negroTarjeta: '#1E1E1C',
+    negroBorde: '#2B2B29',
+    grisClaro: '#B8B8B4',
   },
   fonts: {
     editorial: "'Playfair Display', serif",

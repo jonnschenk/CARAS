@@ -25,8 +25,8 @@ export const Grid = styled.div`
 export const Card = styled.blockquote`
   flex: 1 1 280px;
   max-width: 320px;
-  background: #1e1e1c;
-  border: 1px solid #2b2b29;
+  background: ${({ theme }) => theme.colors.negroTarjeta};
+  border: 1px solid ${({ theme }) => theme.colors.negroBorde};
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
@@ -52,5 +52,5 @@ export const Autor = styled.footer`
   font-family: ${({ theme }) => theme.fonts.ui};
   font-weight: 700;
   font-size: 0.8125rem;
-  color: #b8b8b4;
+  color: ${({ theme }) => theme.colors.grisClaro};
 `;
