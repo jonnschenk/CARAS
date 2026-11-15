@@ -37,3 +37,9 @@ export interface SocialLink {
   name: string;
   href: string;
 }
+
+export interface NavItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}

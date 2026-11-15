@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { btnBase, btnRojo } from '../../styles/mixins';
 
 export const Topbar = styled.div`
   display: flex;
@@ -84,4 +85,88 @@ export const HeroSubtitulo = styled.p`
   font-size: 1.0625rem;
   max-width: 46ch;
   margin: 0 auto;
+`;
+
+export const Nav = styled.nav<{ $abierto: boolean }>`
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    order: 3;
+    flex-basis: 100%;
+    max-height: ${({ $abierto }) => ($abierto ? '300px' : '0')};
+    padding-top: ${({ $abierto }) => ($abierto ? '8px' : '0')};
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+`;
+
+export const NavList = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 4px 0;
+  }
+`;
+
+export const NavLink = styled.a<{ $activo?: boolean }>`
+  font-family: ${({ theme }) => theme.fonts.ui};
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  color: ${({ $activo, theme }) => ($activo ? theme.colors.rojo : 'inherit')};
+  border-bottom: 2px solid
+    ${({ $activo, theme }) => ($activo ? theme.colors.rojo : 'transparent')};
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.rojo};
+  }
+`;
+
+export const Actions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+`;
+
+export const HeaderBtn = styled.a`
+  ${btnBase}
+  ${btnRojo}
+  font-size: 0.75rem;
+  padding: 10px 18px;
+  white-space: nowrap;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 9px 14px;
+  }
+`;
+
+export const Toggle = styled.button`
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 24px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: flex;
+  }
+`;
+
+export const ToggleLinea = styled.span`
+  display: block;
+  height: 2px;
+  background: ${({ theme }) => theme.colors.negro};
 `;
